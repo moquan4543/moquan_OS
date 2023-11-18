@@ -3,7 +3,7 @@
 
 		ORG		0x7c00			; 指名程式裝載地址
 
-; 標準FAT12軟?
+; 標準FAT12軟碟
 
 		JMP		entry
 		DB		0x90
