@@ -1,9 +1,9 @@
 ; hello-os
 ; TAB=4
 
-		ORG		0x7c00			; Žw–¼’öŽ®åäÚ’nš¬
+		ORG		0x7c00			; æŒ‡åç¨‹å¼è£è¼‰åœ°å€
 
-; •W€FAT12“î?
+; æ¨™æº–FAT12è»Ÿ?
 
 		JMP		entry
 		DB		0x90
@@ -26,10 +26,10 @@
 		DB		"FAT12   "
 		RESB	18
 
-; ’öŽ®áù
+; ç¨‹å¼ç¢¼
 
 entry:
-		MOV		AX,0			; Šñ‘¶Ší‰Žn‰»
+		MOV		AX,0			; å¯„å­˜å™¨åˆå§‹åŒ–
 		MOV		SS,AX
 		MOV		SP,0x7c00
 		MOV		DS,AX
@@ -41,21 +41,21 @@ putloop:
 		ADD		SI,1			; SI += 1
 		CMP		AL,0
 		JE		fin
-		MOV		AH,0x0e			; èûŽ¦•¶Žš
-		MOV		BX,15			; Žw’èŽš•„èøF
-		INT		0x10			; ’²—pèû?BIOS
+		MOV		AH,0x0e			; é¡¯ç¤ºæ–‡å­—
+		MOV		BX,15			; æŒ‡å®šå­—ç¬¦é¡è‰²
+		INT		0x10			; èª¿ç”¨é¡¯?BIOS
 		JMP		putloop
 fin:
-		HLT						; ’âŽ~C“™‘ÒŽw—ß
-		JMP		fin				; Ž€zŠÂ
+		HLT						; åœæ­¢ï¼Œç­‰å¾…æŒ‡ä»¤
+		JMP		fin				; æ­»å¾ªç’°
 
 msg:
-		DB		0x0a, 0x0a		; Ž·s™_ŽŸ
+		DB		0x0a, 0x0a		; åŸ·è¡Œå…©æ¬¡
 		DB		"hello, world"
-		DB		0x0a			; Š·s
+		DB		0x0a			; æ›è¡Œ
 		DB		0
 
-		RESB	0x7dfe-$		; 0x7dfe´—ë
+		RESB	0x7dfe-$		; 0x7dfeæ¸…é›¶
 
 		DB		0x55, 0xaa
 
