@@ -43,7 +43,7 @@ putloop:
 		JE		fin
 		MOV		AH,0x0e			; 顯示文字
 		MOV		BX,15			; 指定字符顏色
-		INT		0x10			; 調用顯?BIOS
+		INT		0x10			; 調用顯卡BIOS
 		JMP		putloop
 fin:
 		HLT						; 停止，等待指令
